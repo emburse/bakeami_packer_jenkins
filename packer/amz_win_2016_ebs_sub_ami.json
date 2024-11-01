@@ -111,7 +111,7 @@
     "ami_users":"",
     "packer_role":"packer",
     "packer_instance_profile":"packer",
-    "PACKER_INSTANCE_TYPE":"c5.large",
+    "PACKER_INSTANCE_TYPE":"m4.large",
     "bake_volume_size":"30"
   }
 }
