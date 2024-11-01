@@ -4,7 +4,7 @@
     "communicator": "winrm",
     "region": "{{ user `region` }}",
     "source_ami": "{{ user `source_ami` }}",
-    "instance_type": "{{ user `packer_instance_type` }}",
+    "instance_type": "{{ user `PACKER_INSTANCE_TYPE` }}",
     "iam_instance_profile":"{{ user `packer_instance_profile`}}",
     "ami_name": "{{ user `client`}}-{{ user `ami_name` }}-{{ user `build_no` }}",
     "ami_regions": "{{ user `ami_regions`}}",
@@ -111,7 +111,7 @@
     "ami_users":"",
     "packer_role":"packer",
     "packer_instance_profile":"packer",
-    "packer_instance_type":"c5.large",
+    "PACKER_INSTANCE_TYPE":"c5.large",
     "bake_volume_size":"30"
   }
 }
