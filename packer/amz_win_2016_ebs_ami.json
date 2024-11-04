@@ -40,7 +40,7 @@
     },
     "aws_polling": {
       "delay_seconds": 60,  
-      "max_attempts": 90
+      "max_attempts": 180
     }
   }],
   "provisioners": [
