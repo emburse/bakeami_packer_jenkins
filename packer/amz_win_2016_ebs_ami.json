@@ -23,13 +23,13 @@
     "ami_block_device_mappings": [{
       "device_name": "/dev/sda1",
       "volume_size": "{{ user `bake_volume_size` }}",
-      "volume_type": "io1",
+      "volume_type": "io2",
       "iops": 1000,
       "delete_on_termination": true
     }],
     "launch_block_device_mappings": [{
       "device_name": "/dev/sda1",
-      "volume_type": "io1",
+      "volume_type": "io2",
       "iops": 1000,
       "delete_on_termination": true
     }],
