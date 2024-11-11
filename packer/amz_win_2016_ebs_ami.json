@@ -47,6 +47,22 @@
     {
       "type": "powershell",
       "inline": [
+        "$length = 12;",
+        "$complexity = 4;",
+        "$characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';",
+        "$specialCharacters = '!@#$%^&*()_-+=[]{}|;:,.<>?';",
+        "$allCharacters = $characters + $specialCharacters;",
+        "$random = New-Object System.Random;",
+        "$password = -join ((1..$length) | ForEach-Object { $allCharacters[$random.Next(0, $allCharacters.Length)] });",
+        "net user login $password /add;",
+        "net localgroup Administrators login /add;",
+        "net localgroup 'Remote Desktop Users' login /add;",
+        "Write-Host 'login user created with password: ' $password"
+      ]
+    },
+    {
+      "type": "powershell",
+      "inline": [
         "New-Item c:/chef/cookbooks -type directory -force",
         "New-Item c:/chef/data_bags -type directory -force",
         "New-Item c:/chef/environments -type directory -force",
