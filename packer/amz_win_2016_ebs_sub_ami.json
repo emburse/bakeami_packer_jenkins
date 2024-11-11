@@ -53,10 +53,10 @@
         "$allCharacters = $characters + $specialCharacters;",
         "$random = New-Object System.Random;",
         "$password = -join ((1..$length) | ForEach-Object { $allCharacters[$random.Next(0, $allCharacters.Length)] });",
-        "net user login $password /add;",
-        "net localgroup Administrators login /add;",
-        "net localgroup 'Remote Desktop Users' login /add;",
-        "Write-Host 'login user created with password: ' $password"
+        "net user packer $password /add;",
+        "net localgroup Administrators packer /add;",
+        "net localgroup 'Remote Desktop Users' packer /add;",
+        "Write-Host 'packer user created with password: ' $password"
       ]
     },
     {
@@ -98,6 +98,13 @@
           "app_build_sha": "{{user `build_sha`}}"
         }
       }
+    },
+    {
+      "type": "powershell",
+      "inline": [
+        "net user packer /delete",
+        "Write-Host 'packer user deleted'"
+      ]
     },
     {
       "type": "powershell",
